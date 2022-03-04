@@ -1,0 +1,6 @@
+C:\Users\amrow\Documents\GitHub\USA - Sanjesh Rao\zCleaner\startup\obj\Debug\startup.csproj.CoreCompileInputs.cache
+C:\Users\amrow\Documents\GitHub\USA - Sanjesh Rao\zCleaner\startup\bin\Debug\zThermal Startup.exe.config
+C:\Users\amrow\Documents\GitHub\USA - Sanjesh Rao\zCleaner\startup\bin\Debug\zThermal Startup.exe
+C:\Users\amrow\Documents\GitHub\USA - Sanjesh Rao\zCleaner\startup\bin\Debug\zThermal Startup.pdb
+C:\Users\amrow\Documents\GitHub\USA - Sanjesh Rao\zCleaner\startup\obj\Debug\zThermal Startup.exe
+C:\Users\amrow\Documents\GitHub\USA - Sanjesh Rao\zCleaner\startup\obj\Debug\zThermal Startup.pdb

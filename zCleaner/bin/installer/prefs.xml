@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Memory xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <directoryToScans>
+    <DirectoryToScan>
+      <path>C:\Users\Amro\Desktop\XCX</path>
+      <includeSubdirectories>false</includeSubdirectories>
+      <RequiredDate>1</RequiredDate>
+      <action>Zip</action>
+      <filesDeleted>0</filesDeleted>
+      <filesZipped>0</filesZipped>
+    </DirectoryToScan>
+  </directoryToScans>
+  <ScanTime>1</ScanTime>
+  <EnableScan>false</EnableScan>
+  <Startup>false</Startup>
+</Memory>

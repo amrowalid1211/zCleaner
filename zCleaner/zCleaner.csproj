@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{410D3FF9-7B3A-4E61-968E-066655C5014D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ZThermalManager</RootNamespace>
+    <AssemblyName>ZThermalManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>layer_1__1__4If_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Memory.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scheduler.cs" />
+    <Compile Include="SCREENS\addedFolderItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SCREENS\addedFolderItem.Designer.cs">
+      <DependentUpon>addedFolderItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SCREENS\addedProcessItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SCREENS\addedProcessItem.Designer.cs">
+      <DependentUpon>addedProcessItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SCREENS\AddFolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SCREENS\AddFolder.Designer.cs">
+      <DependentUpon>AddFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SCREENS\admin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SCREENS\admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SCREENS\folderHistoryitem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SCREENS\folderHistoryitem.Designer.cs">
+      <DependentUpon>folderHistoryitem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SCREENS\homeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SCREENS\homeScreen.Designer.cs">
+      <DependentUpon>homeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SCREENS\processesList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SCREENS\processesList.Designer.cs">
+      <DependentUpon>processesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SCREENS\Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SCREENS\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsConfig.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SCREENS\addedFolderItem.resx">
+      <DependentUpon>addedFolderItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCREENS\addedProcessItem.resx">
+      <DependentUpon>addedProcessItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCREENS\AddFolder.resx">
+      <DependentUpon>AddFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCREENS\admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCREENS\folderHistoryitem.resx">
+      <DependentUpon>folderHistoryitem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCREENS\homeScreen.resx">
+      <DependentUpon>homeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCREENS\processesList.resx">
+      <DependentUpon>processesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCREENS\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo and app name.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Layer 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2867859 - archive icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash screen zyter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3044641 - add app essential interface ui website.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2867859 - archive icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Layer 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3044687 - app essential interface remove ui website.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4733238 - basic location outline target ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minimize-window-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-window-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layer_1__1__4If_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="layer_1__1__4If_icon.ico" />
+    <None Include="Resources\image1.png" />
+    <None Include="Resources\settings1.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\exe-xxl.png" />
+    <None Include="Resources\Shap11e 6 %283%29.png" />
+    <None Include="Resources\Shap11e 6 %282%29.png" />
+    <None Include="Resources\Shap11e 6 %281%29.png" />
+    <None Include="Resources\2Shape 61.png" />
+    <None Include="Resources\2Shape 6.png" />
+    <None Include="Resources\search-icon.png" />
+    <None Include="Resources\Windows-icon.png" />
+    <None Include="Resources\close-icon %281%29.png" />
+    <None Include="Resources\close-icon.png" />
+    <None Include="Resources\icons8-shared-folder-100.png" />
+    <None Include="Resources\Layer 1 %281%29.png" />
+    <None Include="Resources\icons8-add-64.png" />
+    <None Include="Resources\files-and-folders.png" />
+    <None Include="Resources\pngwing.com.png" />
+    <None Include="Resources\icons8-folder-48.png" />
+    <None Include="Resources\image %288%29.png" />
+    <None Include="Resources\icons8-delete-64 %281%29.png" />
+    <None Include="Resources\icons8-delete-64.png" />
+    <None Include="Resources\image %287%29.png" />
+    <None Include="Resources\image %284%29.png" />
+    <None Include="Resources\image %283%29.png" />
+    <None Include="Resources\kisspng-computer-mouse-magnifying-glass-hand-icon-flattened-holding-a-magnifying-glass-hand-5a80877b5d12f4.13037256151837273138121.png" />
+    <None Include="Resources\kisspng-computer-mouse-magnifying-glass-hand-icon-flattened-holding-a-magnifying-glass-hand-5a80877b5d12f4.1303725615183727313812.png" />
+    <None Include="Resources\image %281%29.png" />
+    <None Include="Resources\image %282%29.png" />
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
