@@ -84,7 +84,7 @@ namespace zCleaner
         {
             ProcessToHandle pts = new ProcessToHandle( );
             pts.path = selectedFileName;
-            
+            pts.relaunch = false;
             pts.hours = killTimeHours; 
             pts.restartTime = restartHoursSeconds;
             pts.isOff = false;
@@ -171,8 +171,8 @@ namespace zCleaner
     {
         public string path;
         public DateTime hours,restartTime;
-       // public Icon icon;
-       
+        // public Icon icon;
+        public bool relaunch;
       
         public bool isOff;
 

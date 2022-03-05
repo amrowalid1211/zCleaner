@@ -50,6 +50,8 @@
             this.FolderName = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.chkbxRelaunch = new System.Windows.Forms.CheckBox();
             this.pnlContainer.SuspendLayout();
             this.itemsContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
@@ -78,6 +80,8 @@
             // itemsContainer
             // 
             this.itemsContainer.BackColor = System.Drawing.Color.Gainsboro;
+            this.itemsContainer.Controls.Add(this.chkbxRelaunch);
+            this.itemsContainer.Controls.Add(this.label6);
             this.itemsContainer.Controls.Add(this.btnDelete);
             this.itemsContainer.Controls.Add(this.rdArchive);
             this.itemsContainer.Controls.Add(this.panel12);
@@ -89,14 +93,14 @@
             this.itemsContainer.Margin = new System.Windows.Forms.Padding(2);
             this.itemsContainer.Name = "itemsContainer";
             this.itemsContainer.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.itemsContainer.Size = new System.Drawing.Size(632, 64);
+            this.itemsContainer.Size = new System.Drawing.Size(663, 64);
             this.itemsContainer.TabIndex = 0;
             // 
             // btnDelete
             // 
             this.btnDelete.BackgroundImage = global::ZThermalManager.Properties.Resources.close_icon__1_;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnDelete.Location = new System.Drawing.Point(586, 19);
+            this.btnDelete.Location = new System.Drawing.Point(618, 19);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(34, 33);
@@ -122,7 +126,7 @@
             this.panel12.Location = new System.Drawing.Point(465, 4);
             this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(108, 60);
+            this.panel12.Size = new System.Drawing.Size(75, 60);
             this.panel12.TabIndex = 8;
             // 
             // panel1
@@ -137,7 +141,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(106, 60);
+            this.panel1.Size = new System.Drawing.Size(73, 60);
             this.panel1.TabIndex = 4;
             // 
             // runAfterTimerDateTime
@@ -145,7 +149,7 @@
             this.runAfterTimerDateTime.CustomFormat = "ss";
             this.runAfterTimerDateTime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.runAfterTimerDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.runAfterTimerDateTime.Location = new System.Drawing.Point(32, 18);
+            this.runAfterTimerDateTime.Location = new System.Drawing.Point(13, 18);
             this.runAfterTimerDateTime.Margin = new System.Windows.Forms.Padding(2);
             this.runAfterTimerDateTime.Name = "runAfterTimerDateTime";
             this.runAfterTimerDateTime.ShowUpDown = true;
@@ -159,7 +163,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(69)))));
-            this.label5.Location = new System.Drawing.Point(47, 43);
+            this.label5.Location = new System.Drawing.Point(28, 43);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(21, 13);
@@ -172,7 +176,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(69)))));
-            this.label2.Location = new System.Drawing.Point(31, 2);
+            this.label2.Location = new System.Drawing.Point(12, 2);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 17);
@@ -343,6 +347,30 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(69)))));
+            this.label6.Location = new System.Drawing.Point(544, 6);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Relaunch";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // chkbxRelaunch
+            // 
+            this.chkbxRelaunch.AutoSize = true;
+            this.chkbxRelaunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkbxRelaunch.Location = new System.Drawing.Point(568, 31);
+            this.chkbxRelaunch.Name = "chkbxRelaunch";
+            this.chkbxRelaunch.Size = new System.Drawing.Size(15, 14);
+            this.chkbxRelaunch.TabIndex = 15;
+            this.chkbxRelaunch.UseVisualStyleBackColor = true;
+            // 
             // addedProcessItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,5 +422,7 @@
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label lbl_status;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.CheckBox chkbxRelaunch;
     }
 }

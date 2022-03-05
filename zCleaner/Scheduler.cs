@@ -40,21 +40,21 @@ namespace zCleaner
             {
                 foreach (var x in Form1.memory.processesToHandle)
                 {
-                    string processStatus = isRunning(x.path) ? (isResponding(x.path) ? "RUNNING" : "HANGING") : "OFF";
+                    string processStatus = isRunning(x.path) ? (isResponding(x.path) ? "RUNNING" : "HANGING") : "STOPPED";
                     switch (processStatus)
                     {
                         case "HANGING":
                             if (!shutting.Contains(x))
                             {
-                                new Thread(() => killProcessAfter(x.path, x.hours.Second)).Start();
+                                new Thread(() => killProcessAfter(x, x.hours.Second)).Start();
                                 shutting.Add(x);
                                 
                             }
                             break;
-                        case "OFF":
-                            if (!turningOn.Contains(x))
+                        case "STOPPED":
+                            if (!turningOn.Contains(x) && x.relaunch)
                             {
-                                new Thread(() => ExecuteAsAdminAfter(x.path, x.restartTime.Second)).Start();
+                                new Thread(() => ExecuteAsAdminAfter(x, x.restartTime.Second)).Start();
                                 turningOn.Add(x);
                                 
                             }
@@ -74,16 +74,17 @@ namespace zCleaner
             
         }
 
-        private void ExecuteAsAdminAfter(string fileName, int time)
+        private void ExecuteAsAdminAfter(ProcessToHandle pt, int time)
         {
             try
             {
-                if (isRunning(fileName))
+                if (isRunning(pt.path))
                     return;
+                processesList.processList.updateProcessesStatus(pt, "RELAUNCHING");
                 Thread.Sleep(time*1000);
                 Process proc = new Process();
-                proc.StartInfo.FileName = fileName;
-                proc.StartInfo.WorkingDirectory = Path.GetDirectoryName(fileName);
+                proc.StartInfo.FileName = pt.path;
+                proc.StartInfo.WorkingDirectory = Path.GetDirectoryName(pt.path);
                 proc.StartInfo.UseShellExecute = true;
                 proc.StartInfo.Verb = "runas";
 
@@ -216,9 +217,11 @@ namespace zCleaner
             return false;
         }
 
-        public static void killProcessAfter(string path,int time)
+        public static void killProcessAfter(ProcessToHandle pt,int time)
         {
+
             Thread.Sleep(time*1000);
+            processesList.processList.updateProcessesStatus(pt, "TERMINATING");
             Process[] runningProcesses = Process.GetProcesses();
             foreach (Process process in runningProcesses)
             {
@@ -226,7 +229,7 @@ namespace zCleaner
                 {
                     if (
                    process.MainModule != null &&
-                   string.Compare(process.MainModule.FileName, path, StringComparison.InvariantCultureIgnoreCase) == 0)
+                   string.Compare(process.MainModule.FileName, pt.path, StringComparison.InvariantCultureIgnoreCase) == 0)
                     {
                         if(!process.Responding)
                             process.Kill();

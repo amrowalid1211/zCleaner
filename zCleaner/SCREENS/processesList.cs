@@ -97,7 +97,7 @@ namespace zCleaner.SCREENS
                 afi.FolderName.Text = Path.GetFileName(x.path);
                 afi.FolderPath.Text = x.path;
                 //ShutdownTimer
-               
+                afi.chkbxRelaunch.Checked = x.relaunch;
                 afi.shutdownEachTimerDateTime.Tag = x;
                 afi.shutdownEachTimerDateTime.Value = x.hours;
                 afi.shutdownEachTimerDateTime.ValueChanged += ShutdownEachTimer_ValueChanged1;
@@ -170,14 +170,11 @@ namespace zCleaner.SCREENS
                 Console.WriteLine(s.Tag);
                 ProcessToHandle dts = (ProcessToHandle)s.Tag;
                 dts.restartTime = s.Value;
-
                 s = x.shutdownEachTimerDateTime;
-               
+                dts.relaunch = x.chkbxRelaunch.Checked;
                 Console.WriteLine(s.Tag);
                 dts = (ProcessToHandle)s.Tag;
                 dts.hours = s.Value;
-               
-
             }
             Form1.memory.scanAfterTimer = new DateTime(scanAfterTimer.Value.Ticks);
             Memory.saveSettings();
@@ -204,6 +201,10 @@ namespace zCleaner.SCREENS
                         case "OFF":
                             x.lbl_status.Text = status;
                             x.lbl_status.BackColor = Color.DarkGray;
+                            break;
+                        default:
+                            x.lbl_status.Text = status;
+                            x.lbl_status.BackColor = Color.Red;
                             break;
                     }
                 }
