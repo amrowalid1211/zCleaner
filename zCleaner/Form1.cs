@@ -30,7 +30,7 @@ namespace zCleaner
             InitializeComponent();
             this.FormClosing += Form1_FormClosing;
             main = this;
-
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         public Form1(int runs)

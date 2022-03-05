@@ -9,13 +9,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using zCleaner.SCREENS;
 using Timer = System.Windows.Forms.Timer;
 
 namespace zCleaner
 {
     public class Scheduler
     {
-        public Timer nextScan, processTimer;
+        public Timer nextScan, processTimer,FreezeDetectionTimer;
         public static List<Timer> stopwatches;
         public void initializeTimer()
         {
@@ -25,9 +26,75 @@ namespace zCleaner
             nextScan.Tick += NextScan_Tick;
             nextScan.Start();
 
+            //Freeze Detection Timer
            
-
+            FreezeDetectionTimer = new Timer();
+            FreezeDetectionTimer.Interval = Form1.memory.scanAfterTimer.Hour * 3600000 + Form1.memory.scanAfterTimer.Minute * 60000 + Form1.memory.scanAfterTimer.Second * 1000;
+            FreezeDetectionTimer.Tick += FreezeDetectionTimer_Tick;
+            FreezeDetectionTimer.Start();
         }
+        List<ProcessToHandle> shutting = new List<ProcessToHandle>(), turningOn = new List<ProcessToHandle>(); 
+        private void FreezeDetectionTimer_Tick(object sender, EventArgs e)
+        {
+            new Thread(delegate ()
+            {
+                foreach (var x in Form1.memory.processesToHandle)
+                {
+                    string processStatus = isRunning(x.path) ? (isResponding(x.path) ? "RUNNING" : "HANGING") : "OFF";
+                    switch (processStatus)
+                    {
+                        case "HANGING":
+                            if (!shutting.Contains(x))
+                            {
+                                new Thread(() => killProcessAfter(x.path, x.hours.Second)).Start();
+                                shutting.Add(x);
+                                
+                            }
+                            break;
+                        case "OFF":
+                            if (!turningOn.Contains(x))
+                            {
+                                new Thread(() => ExecuteAsAdminAfter(x.path, x.restartTime.Second)).Start();
+                                turningOn.Add(x);
+                                
+                            }
+                            
+                            break;
+                        default:
+                            shutting.Remove(x);
+                            turningOn.Remove(x);
+                            break;
+                    }
+
+
+                    processesList.processList.updateProcessesStatus(x, processStatus);
+
+                }
+            }).Start();
+            
+        }
+
+        private void ExecuteAsAdminAfter(string fileName, int time)
+        {
+            try
+            {
+                if (isRunning(fileName))
+                    return;
+                Thread.Sleep(time*1000);
+                Process proc = new Process();
+                proc.StartInfo.FileName = fileName;
+                proc.StartInfo.WorkingDirectory = Path.GetDirectoryName(fileName);
+                proc.StartInfo.UseShellExecute = true;
+                proc.StartInfo.Verb = "runas";
+
+                proc.Start();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
         public static void initializeProcessTimer()
         {
             if (stopwatches != null)
@@ -77,7 +144,6 @@ namespace zCleaner
                     }
                 }
                 catch { }
-               
             }
             t.Stop();
             await Delay((pth.restartTime.Minute * 60000 + pth.restartTime.Second * 1000));
@@ -130,10 +196,52 @@ namespace zCleaner
             }
             return false;
         }
+
+        public static bool isResponding (string path)
+        {
+            Process[] runningProcesses = Process.GetProcesses();
+            foreach (Process process in runningProcesses)
+            {
+                try
+                {
+                    if (
+                   process.MainModule != null &&
+                   string.Compare(process.MainModule.FileName, path, StringComparison.InvariantCultureIgnoreCase) == 0)
+                    {
+                        return process.Responding;
+                    }
+                }
+                catch { }
+            }
+            return false;
+        }
+
+        public static void killProcessAfter(string path,int time)
+        {
+            Thread.Sleep(time*1000);
+            Process[] runningProcesses = Process.GetProcesses();
+            foreach (Process process in runningProcesses)
+            {
+                try
+                {
+                    if (
+                   process.MainModule != null &&
+                   string.Compare(process.MainModule.FileName, path, StringComparison.InvariantCultureIgnoreCase) == 0)
+                    {
+                        if(!process.Responding)
+                            process.Kill();
+                    }
+                }
+                catch { }
+            }
+           
+        }
+
         private void ProcessTimer_Tick(object sender, EventArgs e)
         {
 
         }
+
         private void NextScan_Tick(object sender, EventArgs e)
         {
             //nextScan.Interval = 200;

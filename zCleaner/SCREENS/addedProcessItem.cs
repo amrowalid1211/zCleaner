@@ -31,5 +31,10 @@ namespace zCleaner.SCREENS
         {
 
         }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

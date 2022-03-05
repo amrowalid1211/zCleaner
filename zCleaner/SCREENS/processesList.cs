@@ -18,14 +18,14 @@ namespace zCleaner.SCREENS
     {
         public static Process[] processes;
         public static Panel mainPanel;
+        public static processesList processList;
         public processesList()
         {
             InitializeComponent();
             mainPanel = panel1;
-            
+            processList = this;
             // Get all processes running on the local computer.
-            
-            
+            CheckForIllegalCrossThreadCalls = false;
            
         }
 
@@ -88,6 +88,7 @@ namespace zCleaner.SCREENS
         static List<addedProcessItem> afs; 
         public static void updateScreen()
         {
+            processesList.processList.scanAfterTimer.Value = Form1.memory.scanAfterTimer;
             processesList.mainPanel.Controls.Clear();
             afs = new List<addedProcessItem>();
             foreach (var x in Form1.memory.processesToHandle)
@@ -178,9 +179,35 @@ namespace zCleaner.SCREENS
                
 
             }
+            Form1.memory.scanAfterTimer = new DateTime(scanAfterTimer.Value.Ticks);
             Memory.saveSettings();
             Scheduler.initializeProcessTimer();
             MessageBox.Show("Timers Saved");
+        }
+
+        public void updateProcessesStatus(ProcessToHandle pth,string status)
+        {
+            foreach(var x in afs)
+            {
+                if(x.FolderPath.Text == pth.path)
+                {
+                    switch(status)
+                    {
+                        case "RUNNING":
+                            x.lbl_status.Text = status;
+                            x.lbl_status.BackColor = Color.ForestGreen;
+                            break;
+                        case "HANGING":
+                            x.lbl_status.Text = status;
+                            x.lbl_status.BackColor = Color.IndianRed;
+                            break;
+                        case "OFF":
+                            x.lbl_status.Text = status;
+                            x.lbl_status.BackColor = Color.DarkGray;
+                            break;
+                    }
+                }
+            }
         }
     }
 }

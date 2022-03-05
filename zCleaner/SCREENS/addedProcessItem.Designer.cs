@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lbl_status = new System.Windows.Forms.Label();
             this.FolderPath = new System.Windows.Forms.Label();
             this.FolderName = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -141,14 +142,14 @@
             // 
             // runAfterTimerDateTime
             // 
-            this.runAfterTimerDateTime.CustomFormat = "mm:ss";
+            this.runAfterTimerDateTime.CustomFormat = "ss";
             this.runAfterTimerDateTime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.runAfterTimerDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.runAfterTimerDateTime.Location = new System.Drawing.Point(24, 18);
+            this.runAfterTimerDateTime.Location = new System.Drawing.Point(32, 18);
             this.runAfterTimerDateTime.Margin = new System.Windows.Forms.Padding(2);
             this.runAfterTimerDateTime.Name = "runAfterTimerDateTime";
             this.runAfterTimerDateTime.ShowUpDown = true;
-            this.runAfterTimerDateTime.Size = new System.Drawing.Size(62, 26);
+            this.runAfterTimerDateTime.Size = new System.Drawing.Size(46, 26);
             this.runAfterTimerDateTime.TabIndex = 6;
             this.runAfterTimerDateTime.Value = new System.DateTime(2020, 2, 25, 0, 0, 0, 0);
             // 
@@ -158,12 +159,12 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(69)))));
-            this.label5.Location = new System.Drawing.Point(29, 42);
+            this.label5.Location = new System.Drawing.Point(47, 43);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.Size = new System.Drawing.Size(21, 13);
             this.label5.TabIndex = 7;
-            this.label5.Text = "MM:SS";
+            this.label5.Text = "SS";
             // 
             // label2
             // 
@@ -171,12 +172,12 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(69)))));
-            this.label2.Location = new System.Drawing.Point(21, 2);
+            this.label2.Location = new System.Drawing.Point(31, 2);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Run After";
+            this.label2.Text = "Pause";
             // 
             // label1
             // 
@@ -218,14 +219,14 @@
             // 
             // shutdownEachTimerDateTime
             // 
-            this.shutdownEachTimerDateTime.CustomFormat = "HH:mm:ss";
+            this.shutdownEachTimerDateTime.CustomFormat = "ss";
             this.shutdownEachTimerDateTime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shutdownEachTimerDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.shutdownEachTimerDateTime.Location = new System.Drawing.Point(15, 18);
+            this.shutdownEachTimerDateTime.Location = new System.Drawing.Point(24, 18);
             this.shutdownEachTimerDateTime.Margin = new System.Windows.Forms.Padding(2);
             this.shutdownEachTimerDateTime.Name = "shutdownEachTimerDateTime";
             this.shutdownEachTimerDateTime.ShowUpDown = true;
-            this.shutdownEachTimerDateTime.Size = new System.Drawing.Size(82, 26);
+            this.shutdownEachTimerDateTime.Size = new System.Drawing.Size(50, 26);
             this.shutdownEachTimerDateTime.TabIndex = 5;
             this.shutdownEachTimerDateTime.Value = new System.DateTime(2020, 2, 25, 0, 0, 0, 0);
             this.shutdownEachTimerDateTime.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
@@ -236,12 +237,12 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(69)))));
-            this.label4.Location = new System.Drawing.Point(21, 43);
+            this.label4.Location = new System.Drawing.Point(35, 43);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.Size = new System.Drawing.Size(21, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "DD:HH::MM";
+            this.label4.Text = "SS";
             // 
             // label3
             // 
@@ -249,12 +250,12 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Bahnschrift", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(69)))));
-            this.label3.Location = new System.Drawing.Point(-1, 2);
+            this.label3.Location = new System.Drawing.Point(13, 2);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 17);
+            this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Shutdown Each";
+            this.label3.Text = "Shutdown";
             // 
             // panel3
             // 
@@ -269,6 +270,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.lbl_status);
             this.panel5.Controls.Add(this.FolderPath);
             this.panel5.Controls.Add(this.FolderName);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -277,6 +279,20 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(299, 54);
             this.panel5.TabIndex = 0;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // lbl_status
+            // 
+            this.lbl_status.AutoSize = true;
+            this.lbl_status.BackColor = System.Drawing.Color.ForestGreen;
+            this.lbl_status.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbl_status.ForeColor = System.Drawing.Color.White;
+            this.lbl_status.Location = new System.Drawing.Point(289, 0);
+            this.lbl_status.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_status.Name = "lbl_status";
+            this.lbl_status.Size = new System.Drawing.Size(10, 13);
+            this.lbl_status.TabIndex = 4;
+            this.lbl_status.Text = "-";
             // 
             // FolderPath
             // 
@@ -377,5 +393,6 @@
         public System.Windows.Forms.DateTimePicker shutdownEachTimerDateTime;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label lbl_status;
     }
 }

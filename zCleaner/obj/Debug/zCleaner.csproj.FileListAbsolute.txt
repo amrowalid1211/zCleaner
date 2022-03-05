@@ -50,3 +50,23 @@ C:\Users\amrow\Documents\GitHub\USA - Sanjesh Rao\zCleaner\zCleaner\obj\Debug\zC
 C:\Users\amrow\Documents\GitHub\USA - Sanjesh Rao\zCleaner\zCleaner\obj\Debug\ZThermalManager.exe
 C:\Users\amrow\Documents\GitHub\USA - Sanjesh Rao\zCleaner\zCleaner\obj\Debug\ZThermalManager.pdb
 C:\Users\amrow\Documents\GitHub\USA - Sanjesh Rao\zCleaner\zCleaner\obj\Debug\zCleaner.csprojAssemblyReference.cache
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\bin\Debug\ZThermalManager.exe.config
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\bin\Debug\ZThermalManager.exe
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\bin\Debug\ZThermalManager.pdb
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.csproj.AssemblyReference.cache
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.csproj.SuggestedBindingRedirects.cache
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.Form1.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\ZThermalManager.Properties.Resources.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.SCREENS.addedFolderItem.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.SCREENS.addedProcessItem.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.SCREENS.AddFolder.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\ZThermalManager.SCREENS.admin.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.SCREENS.folderHistoryitem.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.SCREENS.homeScreen.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.SCREENS.processesList.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.SCREENS.Settings.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.SplashScreen.resources
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.csproj.GenerateResource.cache
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\zCleaner.csproj.CoreCompileInputs.cache
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\ZThermalManager.exe
+C:\Freelance\Infy Consulting\zCleaner\zCleaner\obj\Debug\ZThermalManager.pdb

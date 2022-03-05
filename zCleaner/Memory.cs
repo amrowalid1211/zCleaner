@@ -19,7 +19,7 @@ namespace zCleaner
         public int ScanTimeHours,ScanTimeMinutes;
         public Boolean EnableArchive;
         public Boolean Startup;
-        public DateTime scanTime;
+        public DateTime scanTime, scanAfterTimer;
         public string username, password;
         public Memory ()
         {
@@ -29,6 +29,7 @@ namespace zCleaner
             ScanTimeHours = 24;
             ScanTimeMinutes = 0;
             scanTime = new DateTime(2020, 10, 10, 1, 0, 0);
+            scanAfterTimer = new DateTime(2020, 10, 10, 0, 0, 10);
             EnableArchive = false;
     //        Memory.saveSettings();
         }
